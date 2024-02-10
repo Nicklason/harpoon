@@ -159,7 +159,7 @@ function M.get_default_config()
                     or normalize_path(
                         vim.api.nvim_buf_get_name(
                             vim.api.nvim_get_current_buf()
-                        ),
+                        ):gsub("/", "\\"),
                         config.get_root_dir()
                     )
 
