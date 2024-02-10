@@ -42,10 +42,8 @@ function M.setup_autocmds_and_keymaps(bufnr)
     vim.cmd(cmd)
 
     if vim.api.nvim_buf_get_name(bufnr) == "" then
-        print(bufnr)
-        local name = get_harpoon_menu_name()
-        print(name)
-        vim.api.nvim_buf_set_name(bufnr, name)
+        -- gitgutter sometimes stop working because of this
+        vim.api.nvim_buf_set_name(bufnr, get_harpoon_menu_name())
     end
 
     vim.api.nvim_set_option_value("filetype", "harpoon", {
